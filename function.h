@@ -23,6 +23,7 @@ struct Instruct //структура для новых инструкций
     int i_size; //размер списка команд
     int* i_data; //список команд, вызываемых, если в коде встретилось "имя"
 };
+
 struct NewRules // здесь хранятся новые правило
 {
     int amount;// их число
@@ -52,7 +53,6 @@ char* str_check(string str) // проверяет является ли стро
         exit(1);
     }
 }
-
 
 
 void error_message(FILE* f, int feedback, int value) //фукнция печати обнаруженных ошибок
@@ -92,6 +92,7 @@ int printn(FILE* f) // word is cr
     fprintf(f, "\r\n");
     return 0;
 }
+
 int print(FILE* f, struct Stack S) // word is .
 {
     if (S.size == 0) return 1;
@@ -155,6 +156,8 @@ int plus(struct Stack *S)
     S->size--;
     return 0;
 }
+
+
 int minus(struct Stack *S)
 {
     if (S->size < 2) return 1;

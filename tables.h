@@ -11,8 +11,8 @@
 #include <iostream>
 #include <math.h>
 
-#define max_file 100
-#define max_size 50 //значения для выделения памяти для временныхх массивов (в случае неизвестного настоящего размера)
+#define max_file 50 // Ограничение размера файла (В строках)
+#define max_size 50 //значения для выделения памяти для временных массивов (в случае неизвестного настоящего размера)
 
 using std::string;
 using std::cout;
@@ -60,20 +60,17 @@ class Table // для словарей
 {
     int m_real_size; // настоящий размер массива
     Cell* m_s; // массив клеток (лексем и их значений)
-    // m_ -- member
 
 public:
     Table(int real, Cell* s1)
     {
         this->m_real_size = real;
         m_s = (Cell*)malloc(sizeof(Cell) * (m_real_size+1));
+        if (!m_s) exit(1);
         Cell *table = m_s, *tmp = s1;
-        for (int i = 0; i < m_real_size; table++, tmp++)
-        {
-            if (m_s!=NULL ) {
+        for (int i = 0; i < m_real_size; i++, table++, tmp++)
                 *m_s = *s1;
-            }
-        }
+
     }
     Cell take(int i) // получаем клетку по индексу
     {
@@ -161,7 +158,6 @@ Table create_wordlist() //создание wordlist словаря зарезе�
     Cell* tmp= (Cell*)malloc(sizeof(Cell) * (s_size + 1)); // временный массив
     if (tmp != NULL)
     {
-
         Cell* tmpCell = tmp;
 
         for (int i = 0; i < s_size; i++)

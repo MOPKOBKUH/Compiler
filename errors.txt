@@ -1,1 +1,25 @@
-Error #23 || this word is already taken
+Error #41 || unknown command
+Error #42 || unknown command
+Error #43 || unknown command
+Error #42 || unknown command
+Error #45 || unknown command
+Error #46 || unknown command
+Error #42 || unknown command
+Error #43 || unknown command
+Error #47 || unknown command
+Error #41 || unknown command
+Error #49 || unknown command
+Error #410 || unknown command
+Error #411 || unknown command
+Error #42 || unknown command
+Error #49 || unknown command
+Error #412 || unknown command
+Error #45 || unknown command
+Error #46 || unknown command
+Error #41 || unknown command
+Error #413 || unknown command
+Error #414 || unknown command
+Error #42 || unknown command
+Error #49 || unknown command
+Error #413 || unknown command
+Error #45 || unknown command

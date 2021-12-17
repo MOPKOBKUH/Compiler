@@ -20,7 +20,9 @@
 */
 
 #include <cstdio>
+#include <cstdlib>
 #include <string>
+#include <iostream>
 #include "function.h"
 #include "tables.h"
 #include "dictionary.h"
@@ -190,7 +192,8 @@ struct NewRules work(int *i, struct Files Im, int* value, int valuesize, struct 
     R.steck = S;
     return R;
 }
-void start(string filename) //здесь происходит вся основная работа
+
+int start(string filename) //здесь происходит вся основная работа
 {
 
     FILE* fee;
@@ -211,7 +214,7 @@ void start(string filename) //здесь происходит вся основ�
     struct Files Im = { D,Wordlist, Namelist, CSize, Code }; //получаем все значения из работы автомата
     Im.D = D; //некоторые полезные вещи -> на случай необходимости возвращения к исходным данным
 
-    //Im.Wordlist.Print();
+    Im.Wordlist.Print();
     //int feedback =0;
 
 
@@ -221,11 +224,12 @@ void start(string filename) //здесь происходит вся основ�
 
 
     int R_amount = 0;
-    struct Instruct *R_rules= (struct Instruct*)malloc(sizeof(struct Instruct) * max_size); // "пустая", но большого размера ищначально
-    struct Stack R_steck = S;
-    struct NewRules R {R_amount, R_rules, R_steck }; // стуктура "новых" правил, то есть для "функций", "переменных" и т.д.
+    int str_size = (sizeof(struct Instruct) * max_size);
+    struct Instruct *R_rules= (struct Instruct*)malloc(str_size); // "пустая", но большого размера изначально
+    struct Stack R_stack= S;
+    struct NewRules R {R_amount, R_rules, R_stack}; // стуктура "новых" правил, то есть для "функций", "переменных" и т.д.
 
-    //Im.Namelist.Print();
+    Im.Namelist.Print();
 
     for (int i = 0; i < Im.CSize; i++) //читаем код по словам
     {
@@ -263,11 +267,11 @@ void start(string filename) //здесь происходит вся основ�
 
     fclose(fee);
     fclose(errors);
-    return;
+    return 0;
 }
-int main(void)
-{
 
-    start(); //запустили работу программы
+int main(int argc, char **argv)
+{
+    start(argv[1]); //запустили работу программы
     return 0;
 }
