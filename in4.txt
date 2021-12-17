@@ -1,0 +1,25 @@
+   /* int choice = 0;
+    cout << "CHOOSE WHAT DO YOU WANT?\n 1 - just set of words\n 2 - function to compare with zero\n 3 - new strange stuff\n ";
+    std::cin >> choice;
+    switch (choice)
+    {
+    case 1:
+        source = fopen("in2.txt", "r");
+        break;
+    case 2:
+        source = fopen("in.txt", "r");
+        break;
+    case 3:
+        source = fopen("in5.txt", "r");
+        break;
+    default:
+        exit(1);
+        break;
+    }*/
+    1 5 + 4 * . dup cr
+ ." print hey " . cr 
+ 24 =  if 3 . else 4 . cr 
+ { smth } 
+ : SOLUTION + * ;
+ SOLUTION
+ 7 

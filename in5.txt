@@ -1,0 +1,5 @@
+ : a 1 ; a . cr 
+ a 1 = if : b 3 ; then
+ a b + . cr 
+ : SOLUTION   + * ;
+ c a b SOLUTION . 

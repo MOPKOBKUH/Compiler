@@ -1,0 +1,5 @@
+: TEST   ." zero " . cr ;
+{ print zero or non- zero }
+1 0= if test then
+0  0=  if test then
+-10.4 0= if test then
